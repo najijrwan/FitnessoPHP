@@ -105,29 +105,25 @@ document.getElementById('welcomeForm').addEventListener('submit', function(event
 
 
 
-// JavaScript code to add radio input and form dynamically after form submission
 
 document.getElementById("welcomeForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault();
 
-    // Get full name from the initial form
     var fullNameFromInitialForm = document.getElementById("fullName").value;
 
-    // Create radio input for choosing goal
     var goalRadioDiv = document.createElement("div");
-    goalRadioDiv.className = "goalRadioDiv"; // Add class for styling
+    goalRadioDiv.className = "goalRadioDiv";
     goalRadioDiv.innerHTML = "<label>Choose your goal:</label><br>" +
         "<input type='radio' id='loseWeight' name='goal' value='loseWeight' required>" +
         "<label for='loseWeight'>Lose Weight</label><br>" +
         "<input type='radio' id='gainWeight' name='goal' value='gainWeight' required>" +
         "<label for='gainWeight'>Gain Weight</label><br><br>";
 
-    // Create form for additional information
     var additionalInfoForm = document.createElement("form");
     additionalInfoForm.id = "additionalInfoForm";
-    additionalInfoForm.className = "additionalInfoForm"; // Add class for styling
+    additionalInfoForm.className = "additionalInfoForm";
     additionalInfoForm.innerHTML = "<label for='dynamicFullName'>Full Name:</label>" +
-        "<input type='text' id='dynamicFullName' name='dynamicFullName' value='" + fullNameFromInitialForm + "' required><br><br>" + // Populate with initial full name
+        "<input type='text' id='dynamicFullName' name='dynamicFullName' value='" + fullNameFromInitialForm + "' required><br><br>" + 
         "<label for='gender'>Gender:</label>" +
         "<select id='gender' name='gender' required>" +
         "<option value='male'>Male</option>" +
@@ -157,37 +153,32 @@ document.getElementById("welcomeForm").addEventListener("submit", function(event
         "<option value='6'>6 days/week</option>" +
         "<option value='7'>7 days/week</option>" +
         "</select><br><br>" +
-        "<button id='calculateButton' type='submit'>Calculate Daily Calorie Intake</button>"; // Changed button text
+        "<button id='calculateButton' type='submit'>Calculate Daily Calorie Intake</button>";
 
-    // Append radio input and form to a container div
     var dynamicElementsContainer = document.createElement("div");
-    dynamicElementsContainer.id = "dynamicElementsContainer"; // Adding an ID for easy access
-    dynamicElementsContainer.className = "dynamicElementsContainer"; // Add class for styling
+    dynamicElementsContainer.id = "dynamicElementsContainer";
+    dynamicElementsContainer.className = "dynamicElementsContainer";
     dynamicElementsContainer.appendChild(goalRadioDiv);
     dynamicElementsContainer.appendChild(additionalInfoForm);
 
-    // Insert the container div after the existing form container
     var formContainer = document.getElementById("formContainer");
     formContainer.insertAdjacentElement("afterend", dynamicElementsContainer);
 
-    // Event listener to calculate and display form information
     additionalInfoForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent form submission
+        event.preventDefault();
 
-        // Get additional information
         var fullName = document.getElementById("dynamicFullName").value;
         var gender = document.getElementById("gender").value;
         var age = parseInt(document.getElementById("age").value);
         var height = parseInt(document.getElementById("height").value);
         var weight = parseInt(document.getElementById("weight").value);
         var workoutType = document.getElementById("workoutType").value;
-        var workoutIntensity = parseInt(document.getElementById("workoutIntensity").value); // Parsing as integer
+        var workoutIntensity = parseInt(document.getElementById("workoutIntensity").value);
 
-        // Calculate daily calorie intake (simple example formula)
         var dailyCalorieIntake = 10 * weight + 6.25 * height - 5 * age + (gender === 'male' ? 5 : -161);
-        dailyCalorieIntake *= (1.2 + (0.175 * workoutIntensity)); // Adjust based on workout intensity
+        dailyCalorieIntake *= (1.2 + (0.175 * workoutIntensity));
 
-        // Create table with headers for input values
+
         var table = "<h2>Form Information</h2>" +
             "<table border='1' class='infoTable'>" +
             "<tr><th>Information</th><th>Value</th></tr>" +
@@ -201,24 +192,21 @@ document.getElementById("welcomeForm").addEventListener("submit", function(event
             "<tr><td>Daily Intake (calories/day)</td><td id='dailyIntakeValue'>" + Math.round(dailyCalorieIntake) + "</td></tr>" +
             "</table>";
 
-        // Display table with headers
         var resultContainer = document.createElement("div");
-        resultContainer.className = "resultContainer"; // Add class for styling
+        resultContainer.className = "resultContainer";
         resultContainer.innerHTML = table;
         dynamicElementsContainer.appendChild(resultContainer);
 
-        // Disable form fields
         var inputs = additionalInfoForm.elements;
         for (var i = 0; i < inputs.length; i++) {
             inputs[i].disabled = true;
         }
 
-        // Change button text
-        document.getElementById("calculateButton").textContent = "Calculated"; // Changed button text
+        document.getElementById("calculateButton").textContent = "Calculated";
 
-        // Change button functionality to recalculate
+  
         document.getElementById("calculateButton").onclick = function() {
-            // Enable form fields
+
             for (var i = 0; i < inputs.length; i++) {
                 inputs[i].disabled = false;
             }
