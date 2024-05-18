@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness Advisers</title>
-    <link rel="stylesheet" href="CSS/Fitnesso.CSS">
     <script src="JS/Fitnesso.js"></script>
+    <link rel="stylesheet" href="CSS/Register.CSS">
     <?php include 'header.php'; ?>
 </head>
 <body>
-    
+    <div class = "gettingStarted">
+        Fitness Advisers
+    </div>
+
+    <?php include 'footer.php'; ?>
 </body>
 </html>

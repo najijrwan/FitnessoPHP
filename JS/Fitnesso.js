@@ -17,3 +17,12 @@ function changeSize2(x)
     x.style.backgroundColor = "black";
 }
 
+function changeSize3(x)
+{
+    x.style.fontSize = "20px";
+}
+
+function changeSize4(x)
+{
+    x.style.fontSize = "16px";
+}

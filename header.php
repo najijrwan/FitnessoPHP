@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
     <link rel="stylesheet" href="CSS/Fitnesso.css">
+    <script src="JS/Register.js"></script>
 </head>
 <body>
 <header>
-    
     <div>
         <ul>
             <li><a href="Fitnesso.php" id="fitnesso">Fitnesso</a></li>

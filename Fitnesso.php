@@ -15,7 +15,7 @@
         <div class = "overlay">
             <h1>Your Fitness Journey Starts Here.</h1>
             <h4>"You don't have to be great to start, but you have to start to be great."</h4>
-            <a href="About.html" 
+            <a href="About.php" 
              onmousedown="changeSize1(this)"
              onmouseup="changeSize2(this)">
              Learn More
@@ -36,7 +36,7 @@
                 and future goals Fitnesso can do that for you. It tracks your activity step by step
                 and directs you to what need to be done do achieve a certain goal.
             </p>
-            <a href="About.html">Learn More</a>
+            <a href="About.php">Learn More</a>
         </div>
         <div class="img2">
             <img src="Images/Athlete3.jpg" alt="Your Image">
@@ -48,7 +48,7 @@
             <img src="Images/Athlete4.jpg" alt="Your Image">
         </div>
         <div class="text">
-            <h5>Requirements</h5>
+            <h5>About</h5>
             <h1>What do you need to start?</h1>
             <p>
                 What you need is a strong mindest, patience, time, and effort. You need
@@ -57,13 +57,13 @@
                 But materistically you need to complete some steps to start with 
                 <span style="font-style: italic;">Fitnesso.</span>
             </p>
-            <a href="About.html">Learn More</a>
+            <a href="About.php">Learn More</a>
         </div>
     </div>
 
     <div class = "container3">
         <h1>You can benifit from various professionals</h1>
-        <div class = "content">
+        <div class = "content" onmouseover="changeSize3(this)" onmouseout="changeSize4(this)">
             <h3>Personal Trainers</h3>
             <p>You can contact and work with experienced personal trainers that our team has
                 collaborated with to help you achieve your goals and fitness result. These pro-trainers
@@ -71,7 +71,7 @@
             </p>
             <a href="PersonalTrainers.php" id = "pro">Personal Trainers</a>
         </div>
-        <div class = "content">
+        <div class = "content" onmouseover="changeSize3(this)" onmouseout="changeSize4(this)">
             <h3>Nutritionists</h3>
             <p>Our team has also collaborated with mutliple Nutritionists that have studied the field
                 and can guide you through your diet plan throughout your fitness journey. This guidence
@@ -79,7 +79,7 @@
             </p>
             <a href="Nutritionists.php" id = "pro">Nutritionists</a>
         </div>
-        <div class = "content">
+        <div class = "content" onmouseover="changeSize3(this)" onmouseout="changeSize4(this)">
             <h3>Fitness Advisers</h3>
             <p>You can work and contact multiple fitness advisers that will help you set your mentality
                 to stay motivated and enthusiastic about your workouts and ultimate goals and body goals.
@@ -88,13 +88,6 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <h1>Don't waste time and start now!</h1>
-        <p>Starting and registering on our website doesn't take time. Join us now and begin your journey to better health and fitness!</p>
-        <a href="Register.php" id="start-link">Get Started</a>
-        <p>Contact us if you have any questions or need help</p>
-        <a href="Contact.php" id = "contactus">Contact Us</a>
-    </footer>
-
+    <?php include 'footer.php'; ?>
 </body>
 </html>
